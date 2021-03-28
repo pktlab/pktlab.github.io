@@ -1,5 +1,23 @@
 <!DOCTYPE html>
-<meta charset="utf-8">
-<title>Redirecting to https://packetlab.github.io</title>
-<meta http-equiv="refresh" content="0; URL=https://packetlab.github.io">
-<link rel="canonical" href="https://packetlab.github.io">
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Redirecting to PacketLab</title>
+  </head>
+  <body>
+    <h1 id='page-title'>Redirecting to PacketLab</h1>
+    <script type="text/javascript">
+      const url = "https://packetlab.github.io";
+      const title = 'Redirecting to ' + url;
+      document.title = title;
+      document.getElementById('page-title').textContent = title;
+      var start = 0;
+      if (window.location.pathname.substring(0,2) === "/#") {
+        start = 2;
+      }
+      window.location.replace(url + "/#" + window.location.pathname.substring(start));
+    </script>
+  </body>
+</html>
