@@ -13,11 +13,11 @@
       const title = 'Redirecting to ' + url;
       document.title = title;
       document.getElementById('page-title').textContent = title;
-      var start = 0;
-      if (window.location.pathname.substring(0,2) === "/#") {
-        start = 2;
+      if (window.location.pathname === "/") {
+        window.location.replace(url + "/" + window.location.hash);
+      } else {
+        window.location.replace(url + window.location.pathname + window.location.hash);
       }
-      window.location.replace(url + "/#" + window.location.pathname.substring(start));
     </script>
   </body>
 </html>
