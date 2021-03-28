@@ -13,8 +13,9 @@
       const title = 'Redirecting to ' + url;
       document.title = title;
       document.getElementById('page-title').textContent = title;
-      if (window.location.pathname === "/") {
-        window.location.replace(url + "/" + window.location.hash);
+      if (window.location.pathname === "/" &&
+          window.location.hash.substring(0,2) === "#/") {
+        window.location.replace(url + window.location.hash.substring(1));
       } else {
         window.location.replace(url + window.location.pathname + window.location.hash);
       }
